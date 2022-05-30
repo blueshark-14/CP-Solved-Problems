@@ -2,18 +2,15 @@ class Solution {
     /// trie implement
     struct node{
         node *next[26];
-        string word;
-        
+        string word;      
         node()
         {
             word="";
             for(int i=0; i<26; i++)
                 next[i]=NULL;    
-        }
-        
-        
+        }       
     }*root;
-    /// inert
+    /// insert
     void insert(string s){
         
         node *curr = root;
@@ -32,8 +29,7 @@ class Solution {
             if(curr->next[i]!=NULL)
                 del(curr->next[i]);
         delete(curr);
-    }
-    
+    }   
     ///dfs 
     void dfs(vector<vector<char>>& board, int i, int j, node *curr , vector<string>&res ){
         
